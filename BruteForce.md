@@ -132,4 +132,4 @@ long long optimizedMaxDist(int x[], int y[], int n) {
 ## Kết luận
 Brute Force là thuật toán cơ bản nhất trong khoa học máy tính. Mặc dù đơn giản và kém hiệu quả, nó vẫn là điểm khởi đầu tốt để hiểu vấn đề và phát triển các giải pháp tối ưu hơn.
 
-> 💡 **Mẹo**: Trước khi áp dụng các thuật toán phức tạp, hãy xem xét liệu Brute Force có đủ tốt cho vấn đề của bạn không.
+> 💡 **Mẹo**: Trước khi áp dụng các thuật toán phức tạp, hãy xem xét liệu Brute Force có đủ tốt cho vấn đề của bạn không. Nhưng nếu đã có giải pháp thì đừng dùng Brute Force nhé.
