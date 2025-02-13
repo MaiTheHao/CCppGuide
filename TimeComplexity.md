@@ -1,7 +1,7 @@
-# Độ Phức Tạp Thuật Toán (Time Complexity)
+# Độ Phức Tạp Thời Gian (Time Complexity)
 
 ## Khái niệm cơ bản
-Độ phức tạp thời gian là thước đo *số lượng phép toán* mà một thuật toán thực hiện khi *kích thước đầu vào tăng lên*. 
+Độ phức tạp thời gian là thước đo *số lượng phép toán* mà một thuật toán thực hiện khi *kích thước đầu vào tăng lên*. Độ phức tạp càng lớn thì càng tốn nhiều thời gian và tài nguyên hệ thống để chạy hơn, dẫn đến tốn nhiều chi phí hơn.
 
 > **Lưu ý**: Độ phức tạp thời gian không phải là thời gian thực thi chính xác, mà là số lần phép toán thực hiện.
 
