@@ -69,6 +69,14 @@ int main() {
 
 **Prefix Sum** (_Tổng tích lũy_) là kỹ thuật lập trình giúp tính nhanh tổng các phần tử trong một đoạn của mảng bằng cách sử dụng mảng đã được **tiền xử lý** gọi là mảng **cộng dồn**. Nhờ **tiền xử lý**, ta có thể truy vấn tổng đoạn con trong _O(1)_ thay vì _O(n)_ như cách trên.
 
+Trong nội dung này, chúng ta chỉ giới thiệu và hướng dẫn về **Prefix Sum 1D** vì tính dễ hiểu và đặt nền móng cho các loại khác. Các loại khác bao gồm:
+
+- **Prefix Sum 2D**: Áp dụng cho mảng hai chiều.
+- **Prefix Sum 3D**: Áp dụng cho mảng ba chiều.
+- **Prefix Sum với cập nhật động**: Sử dụng các cấu trúc dữ liệu như Fenwick Tree hoặc Segment Tree để hỗ trợ cập nhật động.
+
+Bắt đầu với **Prefix Sum 1D** sẽ giúp bạn nắm vững khái niệm cơ bản trước khi tiến tới các kỹ thuật phức tạp hơn.
+
 ## ĐỊNH NGHĨA
 
 Giả sử bạn có một mảng số nguyên:
