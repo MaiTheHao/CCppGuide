@@ -162,8 +162,8 @@ sum(1, 3) = P[3] - P[0] = 10 - 1 = 9
 sum(0, 4) = P[4] - P[-1] = 15 - 0 = 15
 ```
 
-## GIẢI QUYẾT VẤN ĐỀ BAN ĐẦU VỚI 1 TỶ QUERY
-### Áp dụng kiến thức mới biết về prefix sum vào bài toán ban đầu:
+# GIẢI QUYẾT VẤN ĐỀ BAN ĐẦU VÀ 1 TỶ TRUY VẤN
+## Áp dụng kiến thức mới biết về prefix sum vào bài toán ban đầu:
 
 ```c
 #include <stdio.h>
@@ -199,7 +199,7 @@ int main(){
     return 0;
 }
 ```
-### Độ phức tạp:
+## Độ phức tạp:
 - Tiền xử lý mảng cộng dồn: O(n) (duyệt qua mảng một lần để tính tổng tích lũy).
 - Mỗi truy vấn tính tổng đoạn con: O(1) (chỉ cần một phép trừ trên mảng cộng dồn).
 - Ba lần truy vấn tổng đoạn con: O(1) (vì vẫn chỉ thực hiện ba phép trừ đơn giản).
@@ -211,10 +211,16 @@ int main(){
 | n = 5               | 10^9 truy vấn    | 5 + 10^9 = 1 tỷ 5 phép toán  | 5s |
 | n = 10^6             | 10^9 truy vấn    | 10^6 + 10^9 = 1 tỷ 1 triệu phép toán  | 5.005s |
 
-🔹 Ví dụ:
-
-Với 1 tỷ truy vấn, tổng số phép toán thực hiện vẫn chỉ là 2 tỷ phép toán, khả thi trên máy tính hiện đại.
-
 💡 Nhận xét:
 - Ưu điểm: Phương pháp này rất hiệu quả khi có nhiều truy vấn vì mỗi truy vấn chỉ mất O(1) thời gian.
 - Nhược điểm: Khi n và q đều rất lớn, có thể cần tối ưu hơn bằng các cấu trúc như Sparse Table (cho truy vấn min/max) hoặc Fenwick Tree / Segment Tree (cho cập nhật động).
+
+# KẾT LUẬN
+
+Như vậy, chúng ta đã tìm hiểu về **Prefix Sum** và cách áp dụng nó để giải quyết bài toán tính tổng đoạn con của mảng số nguyên một cách hiệu quả. Đây là một trong những kỹ thuật cơ bản nhưng rất quan trọng trong lập trình.
+
+Hy vọng rằng bài viết này sẽ giúp bạn hiểu rõ hơn về **Prefix Sum** và cách sử dụng nó trong thực tế.
+
+# LIÊN KẾT
+[Tìm hiểu chi tiết hơn về Prefix Sum](https://usaco.guide/silver/prefix-sums)
+[Tìm hiểu về Prefix Sum 2D và hơn nữa](https://usaco.guide/silver/more-prefix-sums)
