@@ -3,7 +3,11 @@
 ## Khái niệm cơ bản
 Độ phức tạp thời gian là thước đo *số lượng phép toán* mà một thuật toán thực hiện khi *kích thước đầu vào tăng lên*. Độ phức tạp càng lớn thì càng tốn nhiều thời gian và tài nguyên hệ thống để chạy hơn, dẫn đến tốn nhiều chi phí hơn.
 
-> **Lưu ý**: Độ phức tạp thời gian không phải là thời gian thực thi chính xác, mà là số lần phép toán thực hiện.
+> **Lưu ý**: Độ phức tạp thời gian:
+> - Không phải thời gian thực thi chính xác của chương trình
+> - Là ước lượng số lượng phép toán được thực hiện
+> - Luôn phải tính độ phức tạp thời gian dựa trên trường hợp xấu nhất (worst case)
+> - Giúp dự đoán cách thuật toán hoạt động với dữ liệu lớn
 
 > **Bạn đã biết**: Trung bình máy tính xử lý được $2 \times 10^8$ phép tính trong 1s (số liệu tham khảo năm 2021, có thể thay đổi tùy cấu hình máy tính).
 
