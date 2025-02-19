@@ -140,6 +140,7 @@ Sau khi có mảng cộng dồn, tổng của đoạn từ `i` đến `j` có th
 
 ```
 sum(i, j) = P[j] - P[i-1], với i > 0
+sum(i, j) = P[j], với i = 0
 ```
 
 > Chúng ta sẽ sử dụng hai mảng `A` và `P` đã đề cập ở trên.
@@ -150,14 +151,14 @@ Ví dụ:
 (Tức là từ phần tử thứ `2` đến phần tử thứ `4` trong mảng `A`)
 
 ```plaintext
-sum(1, 3) = P[3] - P[0] = 10 - 1 = 9
+sum(1, 3) = P[3] - P[1 - 1] = 10 - 1 = 9
 ```
 
 #### Tính tổng đoạn con từ vị trí `0` đến `4`  
 (Tức là từ phần tử đầu tiên đến phần tử cuối cùng trong mảng `A`)
 
 ```plaintext
-sum(0, 4) = P[4] - P[-1] = 15 - 0 = 15
+sum(0, 4) = P[4] = 15 - 0 = 15
 ```
 
 ## GIẢI QUYẾT VẤN ĐỀ BAN ĐẦU VỚI 1 TỶ QUERY
