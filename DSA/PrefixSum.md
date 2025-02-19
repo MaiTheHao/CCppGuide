@@ -213,3 +213,6 @@ int main(){
 💡 Nhận xét:
 - Ưu điểm: Phương pháp này rất hiệu quả khi có nhiều truy vấn vì mỗi truy vấn chỉ mất O(1) thời gian.
 - Nhược điểm: Khi n và q đều rất lớn, có thể cần tối ưu hơn bằng các cấu trúc như Sparse Table (cho truy vấn min/max) hoặc Fenwick Tree / Segment Tree (cho cập nhật động).
+
+(Bạn có thể tham khảo chi tiết hơn tại đây)[https://usaco.guide/silver/prefix-sums]
+(Bạn có thể tìm hiểu nhiều hơn về Prefix Sum 2D và nhiều thứ thú vị tại đây)[https://usaco.guide/silver/more-prefix-sums]
