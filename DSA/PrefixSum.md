@@ -130,15 +130,13 @@ Vậy mảng prefix là:
 
 ```
 P = [1, 3, 6, 10, 15]
-```
-
-Dưới đây là phiên bản cải thiện của đoạn markdown của bạn, với cấu trúc rõ ràng hơn, sử dụng đúng cú pháp cho các đoạn mã và định dạng nhất quán:  
+``` 
 
 ## ỨNG DỤNG
 
 ### Truy vấn tổng đoạn con mảng  
 
-Sau khi có mảng prefix (mảng tổng prefix), tổng của đoạn từ `i` đến `j` có thể được tính bằng công thức:
+Sau khi có mảng cộng dồn, tổng của đoạn từ `i` đến `j` có thể được tính bằng công thức:
 
 ```
 sum(i, j) = P[j] - P[i-1], với i > 0
@@ -210,10 +208,6 @@ int main(){
 | n bất kỳ            | q truy vấn      | O(n + q)                    | ~ O(n + q) / 2 * 10^8 |
 | n = 5               | 10^9 truy vấn    | 5 + 10^9 = 1 tỷ 5 phép toán  | 5s |
 | n = 10^6             | 10^9 truy vấn    | 10^6 + 10^9 = 1 tỷ 1 triệu phép toán  | 5.005s |
-
-🔹 Ví dụ:
-
-Với 1 tỷ truy vấn, tổng số phép toán thực hiện vẫn chỉ là 2 tỷ phép toán, khả thi trên máy tính hiện đại.
 
 💡 Nhận xét:
 - Ưu điểm: Phương pháp này rất hiệu quả khi có nhiều truy vấn vì mỗi truy vấn chỉ mất O(1) thời gian.
