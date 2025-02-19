@@ -1,5 +1,3 @@
-# LỜI MỞ ĐẦU
-
 ## VẤN ĐỀ
 
 Bạn đã từng giải bài toán tính tổng đoạn con của một dãy số nguyên chưa?
