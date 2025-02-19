@@ -85,7 +85,7 @@ Giả sử bạn có một mảng số nguyên:
 A = [a₀, a₁, a₂, ..., aₙ₋₁]
 ```
 
-Mảng **Prefix Sum** của A được định nghĩa là một mảng chứa tổng tích lũy của các phần tử từ đầu đến mỗi vị trí i:
+Mảng **cộng dồn** của A được định nghĩa là một mảng chứa tổng tích lũy của các phần tử từ đầu đến mỗi vị trí i:
 
 ```
 P[i] = a₀ + a₁ + ... + aᵢ, với i = 0, 1, 2, ..., n-1
