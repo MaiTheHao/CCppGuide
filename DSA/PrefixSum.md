@@ -1,5 +1,3 @@
-# LỜI MỞ ĐẦU
-
 ## VẤN ĐỀ
 
 Bạn đã từng giải bài toán tính tổng đoạn con của một dãy số nguyên chưa?
@@ -85,7 +83,7 @@ Giả sử bạn có một mảng số nguyên:
 A = [a₀, a₁, a₂, ..., aₙ₋₁]
 ```
 
-Mảng **Prefix Sum** của A được định nghĩa là một mảng chứa tổng tích lũy của các phần tử từ đầu đến mỗi vị trí i:
+Mảng **cộng dồn** của A được định nghĩa là một mảng chứa tổng tích lũy của các phần tử từ đầu đến mỗi vị trí i:
 
 ```
 P[i] = a₀ + a₁ + ... + aᵢ, với i = 0, 1, 2, ..., n-1
@@ -130,18 +128,17 @@ Vậy mảng prefix là:
 
 ```
 P = [1, 3, 6, 10, 15]
-```
-
-Dưới đây là phiên bản cải thiện của đoạn markdown của bạn, với cấu trúc rõ ràng hơn, sử dụng đúng cú pháp cho các đoạn mã và định dạng nhất quán:  
+``` 
 
 ## ỨNG DỤNG
 
 ### Truy vấn tổng đoạn con mảng  
 
-Sau khi có mảng prefix (mảng tổng prefix), tổng của đoạn từ `i` đến `j` có thể được tính bằng công thức:
+Sau khi có mảng cộng dồn, tổng của đoạn từ `i` đến `j` có thể được tính bằng công thức:
 
 ```
 sum(i, j) = P[j] - P[i-1], với i > 0
+sum(i, j) = P[j], với i = 0
 ```
 
 > Chúng ta sẽ sử dụng hai mảng `A` và `P` đã đề cập ở trên.
@@ -152,14 +149,14 @@ Ví dụ:
 (Tức là từ phần tử thứ `2` đến phần tử thứ `4` trong mảng `A`)
 
 ```plaintext
-sum(1, 3) = P[3] - P[0] = 10 - 1 = 9
+sum(1, 3) = P[3] - P[1 - 1] = 10 - 1 = 9
 ```
 
 #### Tính tổng đoạn con từ vị trí `0` đến `4`  
 (Tức là từ phần tử đầu tiên đến phần tử cuối cùng trong mảng `A`)
 
 ```plaintext
-sum(0, 4) = P[4] - P[-1] = 15 - 0 = 15
+sum(0, 4) = P[4] = 15 - 0 = 15
 ```
 
 # GIẢI QUYẾT VẤN ĐỀ BAN ĐẦU VÀ 1 TỶ TRUY VẤN
@@ -208,7 +205,7 @@ int main(){
 | Kích thước mảng (n) | Số truy vấn (q) | Tổng số phép toán ước tính | Thời gian ước tính |
 |---------------------|-----------------|-----------------------------|---------------------|
 | n bất kỳ            | q truy vấn      | O(n + q)                    | ~ O(n + q) / 2 * 10^8 |
-| n = 5               | 10^9 truy vấn    | 5 + 10^9 = 1 tỷ 5 phép toán  | 5s |
+| n = 5               | 10^9 truy vấn    | 5 + 10^9 = 1 tỷ lẻ 5 phép toán  | 5s |
 | n = 10^6             | 10^9 truy vấn    | 10^6 + 10^9 = 1 tỷ 1 triệu phép toán  | 5.005s |
 
 💡 Nhận xét:
