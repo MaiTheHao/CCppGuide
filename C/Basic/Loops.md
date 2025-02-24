@@ -1,9 +1,9 @@
 # **Cấu trúc vòng lặp (Loops) trong C**
 
-Trong lập trình C, vòng lặp giúp thực hiện lặp lại một khối lệnh nhiều lần mà không cần phải viết lại cùng một đoạn mã. Các vòng lặp không chỉ giúp giảm thiểu sự lặp lại của mã nguồn mà còn làm cho chương trình trở nên ngắn gọn, rõ ràng và dễ bảo trì. Hai loại vòng lặp phổ biến nhất trong C là:
+Trong lập trình C, vòng lặp giúp thực hiện lặp lại một khối lệnh nhiều lần mà không cần phải viết lại cùng một đoạn mã. Các vòng lặp không chỉ giúp **giảm thiểu sự lặp lại** của mã nguồn mà còn làm cho chương trình trở nên **ngắn gọn**, **rõ ràng** và **dễ bảo trì**. Hai loại vòng lặp phổ biến nhất trong C là:
 
-- **Vòng lặp `for`** – Thích hợp khi biết trước số lần lặp.
-- **Vòng lặp `while`** – Thích hợp khi số lần lặp không xác định trước và phụ thuộc vào một điều kiện.
+- **Vòng lặp `for`** – Thích hợp khi **biết trước số lần lặp**.
+- **Vòng lặp `while`** – Thích hợp khi **số lần lặp không xác định trước** và phụ thuộc vào một điều kiện.
 
 ---
 
@@ -21,6 +21,14 @@ for (giá_trị_khởi_tạo; điều_kiện_dừng; bước_nhảy) {
 - **`điều_kiện_dừng`**: Được kiểm tra trước mỗi lần lặp; nếu đúng thì thực thi khối lệnh, nếu sai thì vòng lặp kết thúc.
 - **`bước_nhảy`**: Cập nhật giá trị biến điều khiển sau mỗi lần lặp.
 
+> **Lưu ý:** Trong C (tiêu chuẩn C89/C90), không thể khai báo biến `int i` trực tiếp trong phần khởi tạo của vòng lặp `for`. Biến phải được khai báo bên ngoài vòng lặp. Hỗ trợ khai báo biến trong `for` chỉ có từ C99 trở lên hoặc trong C++. Nên trong bài viết này, chúng ta sẽ sử dụng cách khai báo biến bên ngoài vòng lặp.
+
+### **Lưu đồ**
+
+<p align="center" style="background-color: white">
+    <img src="../../Imgs/for_loop.jpg" alt="Ảnh lưu đồ của for loop" height="300"/>
+</p>
+
 ### **Ví dụ minh họa**
 
 In ra các số từ 1 đến 5:
@@ -29,7 +37,30 @@ In ra các số từ 1 đến 5:
 for (int i = 1; i <= 5; i++) {
     printf("%d\n", i);
 }
+
+// Hoặc:
+
+int i;
+for (i = 1; i <= 5; i++) {
+    printf("%d\n", i);
+}
 ```
+
+### **Các trường hợp đặc biệt của vòng lặp `for`**
+
+#### **Vòng lặp vô hạn với `for`**
+```c
+for (;;) {
+    // Tương đương với while(1)
+    // Thực thi mãi mãi cho đến khi gặp break hoặc return
+}
+```
+
+#### **Vòng lặp không có phần thân**
+```c
+for (int i = 0; i < n; i++); // Chú ý dấu chấm phẩy ở cuối
+```
+Đây là một vòng lặp hợp lệ nhưng không có tác dụng thực tế vì không có câu lệnh nào được thực thi trong vòng lặp.
 
 ### **Vòng lặp `for` lồng nhau**
 
@@ -38,16 +69,20 @@ Vòng lặp `for` có thể được lồng vào nhau để xử lý các cấu 
 **Ví dụ: In bảng cửu chương từ 2 đến 5**
 
 ```c
-#include <stdio.h>
-
-int main() {
-    for (int i = 2; i <= 5; i++) {
-        for (int j = 1; j <= 10; j++) {
-            printf("%d x %d = %d\n", i, j, i * j);
-        }
-        printf("\n");  // Xuống dòng giữa các bảng cửu chương
+for (int i = 2; i <= 5; i++) {
+    for (int j = 1; j <= 10; j++) {
+        printf("%d x %d = %d\n", i, j, i * j);
     }
-    return 0;
+    printf("\n");
+}
+
+// Hoặc:
+int i, j;
+for (i = 2; i <= 5; i++) {
+    for (j = 1; j <= 10; j++) {
+        printf("%d x %d = %d\n", i, j, i * j);
+    }
+    printf("\n");
 }
 ```
 
@@ -58,8 +93,8 @@ Bạn có thể bỏ qua `khởi_tạo`, `điều_kiện` hoặc `bước_nhảy
 Ví dụ: Bỏ qua phần `bước_nhảy` và cập nhật bên trong thân vòng lặp:
 
 ```c
-int i = 0;
-for (; i < 5; ) {
+int i;
+for (i = 0; i < 5; ) {
     printf("%d\n", i);
     i++;  // Cập nhật biến bên ngoài phần khai báo vòng lặp
 }
@@ -79,20 +114,21 @@ while (điều_kiện) {
 }
 ```
 
+### **Lưu đồ**
+
+<p align="center" style="background-color: white">
+    <img src="../../Imgs/while_loop.jpg" alt="Ảnh lưu đồ của for loop" height="300"/>
+</p>
+
 ### **Ví dụ minh họa**
 
 In ra các số từ 1 đến 5:
 
 ```c
-#include <stdio.h>
-
-int main() {
-    int i = 1;
-    while (i <= 5) {
-        printf("%d\n", i);
-        i++;  // Cần đảm bảo cập nhật điều kiện để tránh vòng lặp vô hạn
-    }
-    return 0;
+int i = 1;
+while (i <= 5) {
+    printf("%d\n", i);
+    i++;  // Cần đảm bảo cập nhật điều kiện để tránh vòng lặp vô hạn
 }
 ```
 
@@ -122,19 +158,22 @@ do {
 } while (điều_kiện);
 ```
 
+### **Lưu đồ**
+
+<p align="center" style="background-color: white">
+    <img src="../../Imgs/dowhile_loop.jpg" alt="Ảnh lưu đồ của do-while loop" height="300"/>
+</p>
+
+
 ### **Ví dụ minh họa**
+In ra các số từ 1 đến 5:
 
 ```c
-#include <stdio.h>
-
-int main() {
-    int i = 1;
-    do {
-        printf("%d\n", i);
-        i++;
-    } while (i <= 5);
-    return 0;
-}
+int i = 1;
+do {
+    printf("%d\n", i);
+    i++;
+} while (i <= 5);
 ```
 
 ---
@@ -156,7 +195,7 @@ for (int i = 1; i <= 10; i++) {
 
 ### **`continue` – Bỏ qua lần lặp hiện tại**
 
-Khi gặp `continue`, chương trình sẽ bỏ qua phần còn lại của vòng lặp hiện tại và chuyển sang lần lặp tiếp theo. Điều này hữu ích khi bạn muốn bỏ qua một số điều kiện nhất định trong vòng lặp.
+Khi gặp `continue`, chương trình sẽ bỏ qua toàn bộ phần chương trình còn lại của vòng lặp hiện tại và chuyển sang lần lặp tiếp theo. Điều này hữu ích khi bạn muốn bỏ qua một số điều kiện nhất định trong vòng lặp.
 
 ```c
 for (int i = 1; i <= 5; i++) {
@@ -194,27 +233,6 @@ for (int i = 1; i <= 5; i++) {
 
 ---
 
-## **7. Bài tập thực hành**
-
-Để củng cố kiến thức, bạn hãy thử giải quyết các bài tập sau:
-
-1. **Tính giai thừa của một số nguyên dương:**
-
-   - Nhập một số nguyên dương từ bàn phím, sử dụng vòng lặp để tính giai thừa của số đó.
-
-2. **Tính tổng các số lẻ từ 1 đến N:**
-
-   - Yêu cầu người dùng nhập giá trị của N và sử dụng vòng lặp để tính tổng.
-
-3. **In ra dãy Fibonacci:**
-
-   - Sử dụng vòng lặp để in ra N số đầu tiên của dãy Fibonacci.
-
-4. **Tìm số nguyên tố:**
-   - Sử dụng vòng lặp để kiểm tra và in ra tất cả các số nguyên tố từ 1 đến N.
-
----
-
 ## **Tổng kết**
 
 - **`for`**: Lý tưởng khi biết trước số lần lặp, cấu trúc rõ ràng và phù hợp cho việc duyệt mảng hay các phép tính lặp đơn giản.
@@ -222,12 +240,3 @@ for (int i = 1; i <= 5; i++) {
 - **`do-while`**: Đảm bảo khối lệnh luôn được thực thi ít nhất một lần, hữu ích khi cần thực hiện thao tác trước khi kiểm tra điều kiện.
 - **Câu lệnh `break` và `continue`**: Cung cấp sự linh hoạt trong việc kiểm soát luồng chương trình bên trong vòng lặp.
 - **Lưu ý khi sử dụng vòng lặp**: Luôn đảm bảo điều kiện dừng hợp lý và quản lý phạm vi biến một cách chính xác để tránh lỗi và tối ưu hiệu năng.
-
-**Hãy luyện tập qua các bài tập thực hành ở trên để nắm vững cách sử dụng vòng lặp trong C!** 🚀
-
----
-
-## **Tài liệu tham khảo**
-
-- Sách “C Programming Language” của Brian W. Kernighan và Dennis M. Ritchie.
-- Các tài liệu hướng dẫn lập trình C trực tuyến và các diễn đàn chia sẻ kinh nghiệm lập trình.
