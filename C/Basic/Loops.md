@@ -178,31 +178,39 @@ do {
 
 ---
 
-## **4. Câu lệnh điều khiển vòng lặp**
+## **4. Điều khiển vòng lặp trong C**
 
-Để điều khiển quá trình lặp, C cung cấp các câu lệnh sau:
+Khi bạn cho chương trình chạy lặp đi lặp lại một đoạn code, đôi lúc bạn muốn "can thiệp" vào nó. C có 2 cách đơn giản để làm điều đó:
 
-### **`break` – Dừng vòng lặp**
+### **`break` – Bấm nút dừng ngay lập tức**
 
-Khi điều kiện nhất định được thỏa mãn, câu lệnh `break` sẽ thoát khỏi vòng lặp ngay lập tức.
+Hãy tưởng tượng bạn đang đếm từ 1 đến 10, nhưng đến số 5 thì bạn hét lên "Thôi, dừng lại!". Lệnh `break` chính là như vậy – nó khiến vòng lặp ngừng chạy ngay lập tức.
 
 ```c
 for (int i = 1; i <= 10; i++) {
-    if (i == 5) break;  // Khi i = 5, vòng lặp kết thúc
-    printf("%d\n", i);
+    if (i == 5) break;  // Đến 5 thì dừng, không đếm nữa
+    printf("%d\n", i);  // Kết quả: 1, 2, 3, 4
 }
 ```
 
-### **`continue` – Bỏ qua lần lặp hiện tại**
+Bình thường vòng lặp sẽ đếm đến 10, nhưng gặp `break` thì nó "tắt máy" sớm.
 
-Khi gặp `continue`, chương trình sẽ bỏ qua toàn bộ phần chương trình còn lại của vòng lặp hiện tại và chuyển sang lần lặp tiếp theo. Điều này hữu ích khi bạn muốn bỏ qua một số điều kiện nhất định trong vòng lặp.
+### **`continue` – Nhảy qua một bước**
+
+Giờ thử tưởng tượng bạn đang nhảy dây, đếm từ 1 đến 5, nhưng đến số 3 thì bạn nói "Bỏ qua lần này!". Lệnh `continue` làm đúng như vậy – nó bảo chương trình bỏ qua lần lặp đang chạy và nhảy sang lần tiếp theo.
 
 ```c
 for (int i = 1; i <= 5; i++) {
-    if (i == 3) continue;  // Khi i = 3, bỏ qua lần lặp đó
-    printf("%d\n", i);
+    if (i == 3) continue;  // Đến 3 thì nhảy qua, không in
+    printf("%d\n", i);     // Kết quả: 1, 2, 4, 5
 }
 ```
+
+Thay vì in hết 1 đến 5, đến số 3 thì nó "lờ đi", nhảy thẳng qua số 4.
+
+### **Nói đơn giản**
+- **`break`**: Như bấm nút "tắt" vòng lặp giữa chừng.
+- **`continue`**: Như nói "bỏ qua bước này, làm bước sau đi".
 
 ---
 
