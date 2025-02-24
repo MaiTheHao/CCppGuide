@@ -128,7 +128,7 @@ if (connection) {
 }
 ```
 
-### 3. Sử dụng switch thay cho nhiều if-else
+### 3. Sử dụng switch thay cho nhiều if-else (bạn sẽ được học ở phía dưới)
 
 Khi có nhiều điều kiện, switch có thể giúp code rõ ràng hơn:
 
@@ -155,7 +155,7 @@ if (isValid == 1)
 if (isValid)
 ```
 
-### 5. Sử dụng toán tử điều kiện
+### 5. Sử dụng toán tử ba ngôi (ternary operator)
 
 ```c
 // Thay vì
@@ -177,16 +177,28 @@ Một cách tiếp cận hiệu quả là **tư duy ngược (reverse thinking)*
 **Ví dụ:**  
 
 ```c
-#include <stdio.h>
 
-const char* processOrder(int isValid, int isPaid, int isCancelled) {
-    if (!isValid) return "Đơn hàng không tồn tại.";
-    if (!isPaid) return "Đơn hàng chưa thanh toán.";
-    if (isCancelled) return "Đơn hàng đã bị hủy.";
+/*
+- Nếu người dùng chưa đăng nhập, trả về thông báo "Bạn chưa đăng nhập."
+- Nếu người dùng đã đăng nhập nhưng không có quyền truy cập, trả về thông báo "Bạn không có quyền truy cập."
+- Nếu người dùng đã đăng nhập và có quyền truy cập, trả về thông báo "Truy cập thành công!"
+*/
 
-    // Xử lý đơn hàng hợp lệ
-    return "Đơn hàng đã được xử lý thành công.";
+// Cách thông thường
+if (!isLoggedIn) {
+    printf("Bạn chưa đăng nhập.");
+} else {
+    if (!hasPermission) {
+        printf("Bạn không có quyền truy cập.");
+    } else {
+        printf("Truy cập thành công!");
+    }
 }
+
+// Cách tối ưu
+if (!isLoggedIn) return "Bạn chưa đăng nhập.";
+if (!hasPermission) return "Bạn không có quyền truy cập.";
+return "Truy cập thành công!";
 ```
 
 Cách này giúp mã gọn hơn, tránh lồng `if-else` sâu, dễ đọc và bảo trì hơn.
