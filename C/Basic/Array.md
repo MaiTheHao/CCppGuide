@@ -191,13 +191,13 @@ int main() {
 
 ## Mảng đa chiều
 
-Mảng đa chiều là một mảng chứa các mảng khác bên trong nó. Mảng đa chiều phổ biến nhất là mảng hai chiều (2D), còn được gọi là ma trận (matrix), thường được sử dụng để lưu trữ dữ liệu dưới dạng bảng với các hàng và cột.
+Mảng đa chiều, còn được gọi là ma trận (matrix), là một mảng chứa các mảng khác bên trong nó. Mảng đa chiều phổ biến nhất là mảng hai chiều (2D), thường được sử dụng để lưu trữ dữ liệu dưới dạng bảng với các hàng và cột.
 
 ### Khai báo mảng đa chiều
 Trong C, mảng n chiều là một cấu trúc dữ liệu mà mỗi chiều được biểu diễn bằng một cặp dấu ngoặc vuông `[]`. Cú pháp tổng quát để khai báo mảng n chiều như sau:
 
 ```c
-// Đây là mảng 2 chiều (ma trận) có 3 hàng và 3 cột:
+// Đây là mảng 2 chiều có 3 hàng và 3 cột:
 int matrix[3][3];
 
 // Đây là mảng 3 chiều có 2 phần tử, mỗi phần tử là một ma trận 3x3:
