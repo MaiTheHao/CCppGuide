@@ -7,9 +7,9 @@ Trong lập trình C, vòng lặp giúp thực hiện lặp lại một khối l
 
 ---
 
-## **1. Vòng lặp `for` trong C**
+# **1. Vòng lặp `for` trong C**
 
-### **Cú pháp cơ bản**
+## **Cú pháp cơ bản**
 
 ```c
 for (giá_trị_khởi_tạo; điều_kiện_dừng; bước_nhảy) {
@@ -23,13 +23,13 @@ for (giá_trị_khởi_tạo; điều_kiện_dừng; bước_nhảy) {
 
 > **Lưu ý:** Trong C (tiêu chuẩn C89/C90), không thể khai báo biến `int i` trực tiếp trong phần khởi tạo của vòng lặp `for`. Biến phải được khai báo bên ngoài vòng lặp. Hỗ trợ khai báo biến trong `for` chỉ có từ C99 trở lên hoặc trong C++. Nên trong bài viết này, chúng ta sẽ sử dụng cách khai báo biến bên ngoài vòng lặp.
 
-### **Lưu đồ**
+## **Lưu đồ**
 
 <p align="center" style="background-color: white">
     <img src="../../Imgs/for_loop.jpg" alt="Ảnh lưu đồ của for loop" height="300"/>
 </p>
 
-### **Ví dụ minh họa**
+## **Ví dụ minh họa**
 
 In ra các số từ 1 đến 5:
 
@@ -46,9 +46,9 @@ for (i = 1; i <= 5; i++) {
 }
 ```
 
-### **Các trường hợp đặc biệt của vòng lặp `for`**
+## **Các trường hợp đặc biệt của vòng lặp `for`**
 
-#### **Vòng lặp vô hạn với `for`**
+## **Vòng lặp vô hạn với `for`**
 
 ```c
 for (;;) {
@@ -57,7 +57,7 @@ for (;;) {
 }
 ```
 
-#### **Vòng lặp không có phần thân**
+## **Vòng lặp không có phần thân**
 
 ```c
 for (int i = 0; i < n; i++); // Chú ý dấu chấm phẩy ở cuối
@@ -65,7 +65,7 @@ for (int i = 0; i < n; i++); // Chú ý dấu chấm phẩy ở cuối
 
 Đây là một vòng lặp hợp lệ nhưng không có tác dụng thực tế vì không có câu lệnh nào được thực thi trong vòng lặp.
 
-### **Vòng lặp `for` lồng nhau**
+## **Vòng lặp `for` lồng nhau**
 
 Vòng lặp `for` có thể được lồng vào nhau để xử lý các cấu trúc phức tạp, ví dụ như xử lý ma trận hay in bảng cửu chương.
 
@@ -89,7 +89,7 @@ for (i = 2; i <= 5; i++) {
 }
 ```
 
-### **Bỏ qua một phần của vòng lặp**
+## **Bỏ qua một phần của vòng lặp**
 
 Bạn có thể bỏ qua `khởi_tạo`, `điều_kiện` hoặc `bước_nhảy` nhưng phải giữ lại ít nhất một dấu `;`.
 
@@ -105,11 +105,11 @@ for (i = 0; i < 5; ) {
 
 ---
 
-## **2. Vòng lặp `while` trong C**
+# **2. Vòng lặp `while` trong C**
 
 Vòng lặp `while` thường dùng khi số lần lặp không được xác định trước và phụ thuộc vào điều kiện.
 
-### **Cú pháp**
+## **Cú pháp**
 
 ```c
 while (điều_kiện) {
@@ -117,13 +117,13 @@ while (điều_kiện) {
 }
 ```
 
-### **Lưu đồ**
+## **Lưu đồ**
 
 <p align="center" style="background-color: white">
     <img src="../../Imgs/while_loop.jpg" alt="Ảnh lưu đồ của for loop" height="300"/>
 </p>
 
-### **Ví dụ minh họa**
+## **Ví dụ minh họa**
 
 In ra các số từ 1 đến 5:
 
@@ -135,12 +135,12 @@ while (i <= 5) {
 }
 ```
 
-### **Vòng lặp vô hạn**
+## **Vòng lặp vô hạn**
 
 Nếu điều kiện luôn đúng, vòng lặp sẽ chạy mãi mãi:
 
 ```c
-while (1) { 
+while (1) {
     // Hoặc while (true) trong C++
     printf("Vòng lặp vô hạn\n");
     // Cần có cơ chế dừng vòng lặp, ví dụ như sử dụng 'break'
@@ -149,11 +149,11 @@ while (1) {
 
 ---
 
-## **3. Vòng lặp `do-while` trong C**
+# **3. Vòng lặp `do-while` trong C**
 
 Vòng lặp `do-while` luôn đảm bảo thực hiện ít nhất một lần, vì điều kiện được kiểm tra sau khi khối lệnh được thực thi.
 
-### **Cú pháp**
+## **Cú pháp**
 
 ```c
 do {
@@ -161,13 +161,13 @@ do {
 } while (điều_kiện);
 ```
 
-### **Lưu đồ**
+## **Lưu đồ**
 
 <p align="center" style="background-color: white">
     <img src="../../Imgs/dowhile_loop.jpg" alt="Ảnh lưu đồ của do-while loop" height="300"/>
 </p>
 
-### **Ví dụ minh họa**
+## **Ví dụ minh họa**
 
 In ra các số từ 1 đến 5:
 
@@ -181,11 +181,11 @@ do {
 
 ---
 
-## **4. Câu lệnh điều khiển vòng lặp**
+# **4. Câu lệnh điều khiển vòng lặp**
 
 Để điều khiển quá trình lặp, C cung cấp các câu lệnh sau:
 
-### **`break` – Dừng vòng lặp**
+## **`break` – Dừng vòng lặp**
 
 Khi điều kiện nhất định được thỏa mãn, câu lệnh `break` sẽ thoát khỏi vòng lặp ngay lập tức.
 
@@ -196,7 +196,7 @@ for (int i = 1; i <= 10; i++) {
 }
 ```
 
-### **`continue` – Bỏ qua lần lặp hiện tại**
+## **`continue` – Bỏ qua lần lặp hiện tại**
 
 Khi gặp `continue`, chương trình sẽ bỏ qua toàn bộ phần chương trình còn lại của vòng lặp hiện tại và chuyển sang lần lặp tiếp theo. Điều này hữu ích khi bạn muốn bỏ qua một số điều kiện nhất định trong vòng lặp.
 
@@ -209,7 +209,7 @@ for (int i = 1; i <= 5; i++) {
 
 ---
 
-## **5. Khi nào sử dụng `for` và `while`?**
+# **5. Khi nào sử dụng `for` và `while`?**
 
 | Trường hợp                       | `for` | `while` |
 | -------------------------------- | ----- | ------- |
@@ -227,7 +227,7 @@ for (int i = 1; i <= 5; i++) {
 
 ---
 
-## **6. Lưu ý khi sử dụng vòng lặp**
+# **6. Lưu ý khi sử dụng vòng lặp**
 
 - **Đảm bảo điều kiện dừng:** Luôn cập nhật biến điều kiện để tránh trường hợp vòng lặp vô hạn.
 - **Hiểu rõ phạm vi biến:** Khi khai báo biến trong vòng lặp (ví dụ: `for (int i = 0; ...)`), lưu ý rằng phạm vi của biến chỉ tồn tại trong khối lệnh của vòng lặp.
@@ -236,7 +236,7 @@ for (int i = 1; i <= 5; i++) {
 
 ---
 
-## **Tổng kết**
+# **Tổng kết**
 
 - **`for`**: Lý tưởng khi biết trước số lần lặp, cấu trúc rõ ràng và phù hợp cho việc duyệt mảng hay các phép tính lặp đơn giản.
 - **`while`**: Phù hợp với các tình huống mà số lần lặp phụ thuộc vào điều kiện được kiểm tra trong quá trình thực thi.

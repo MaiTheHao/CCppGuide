@@ -4,7 +4,7 @@ Trong quá trình phát triển phần mềm bằng C, lập trình viên thư�
 
 Trong thực tế, các lỗi không chỉ làm chương trình không chạy đúng mà còn có thể gây ra những hậu quả nghiêm trọng như crash chương trình, rò rỉ bộ nhớ hoặc tạo ra các lỗ hổng bảo mật. Chính vì thế, việc nhận diện và khắc phục lỗi là kỹ năng quan trọng đối với mọi lập trình viên. Dưới đây là các loại lỗi phổ biến trong C cùng với nguyên nhân và cách khắc phục:
 
-## 1. Lỗi Cú Pháp (Syntax Errors) ❌📜🚨
+# 1. Lỗi Cú Pháp (Syntax Errors) ❌📜🚨
 
 Lỗi cú pháp xảy ra khi mã nguồn không tuân theo quy tắc ngữ pháp của C. Trình biên dịch sẽ phát hiện các lỗi này và báo lỗi khi biên dịch, khiến chương trình không thể chạy được. Đây là loại lỗi dễ phát hiện nhất vì trình biên dịch sẽ chỉ ra dòng lỗi và loại lỗi cụ thể.
 
@@ -22,7 +22,7 @@ Lỗi trên xảy ra do thiếu dấu `"` cuối cùng trong chuỗi, làm trìn
 
 Cách khắc phục: Kiểm tra kỹ từng dòng code, sử dụng trình biên dịch để xác định lỗi cú pháp và sửa chữa theo gợi ý của trình biên dịch.
 
-## 2. Lỗi Thực Thi (Runtime Errors) ⚡💥🛑
+# 2. Lỗi Thực Thi (Runtime Errors) ⚡💥🛑
 
 Lỗi thực thi xảy ra trong quá trình chương trình chạy, dẫn đến hành vi bất thường hoặc crash. Đây là loại lỗi khó phát hiện hơn lỗi cú pháp vì chương trình có thể biên dịch thành công nhưng gặp lỗi khi thực thi.
 
@@ -41,7 +41,7 @@ Chương trình trên sẽ bị lỗi thực thi do phép chia cho 0.
 
 Cách khắc phục: Kiểm tra dữ liệu đầu vào, tránh phép chia cho 0, kiểm soát truy cập bộ nhớ chặt chẽ.
 
-## 3. Lỗi Logic và Lỗi Ngữ Nghĩa (Logical & Semantic Errors) 🔄🤯🔍📖🤔⚠️
+# 3. Lỗi Logic và Lỗi Ngữ Nghĩa (Logical & Semantic Errors) 🔄🤯🔍📖🤔⚠️
 
 Lỗi logic và lỗi ngữ nghĩa có nhiều điểm tương đồng, vì cả hai đều khiến chương trình chạy nhưng không cho kết quả mong muốn. Sự khác biệt chính là:
 
@@ -78,7 +78,7 @@ Kết quả in ra sẽ là `2.000000` thay vì `2.5`, do phép chia số nguyên
 
 Cách khắc phục: Kiểm tra thuật toán, sử dụng ép kiểu khi cần thiết và in giá trị biến trong quá trình chạy để xác định lỗi.
 
-## 4. Lỗi Liên Kết (Linker Errors) 🔗🚧💡
+# 4. Lỗi Liên Kết (Linker Errors) 🔗🚧💡
 
 Lỗi liên kết xảy ra khi trình liên kết không thể tìm thấy định nghĩa của các hàm hoặc biến được khai báo trong chương trình.
 
@@ -97,7 +97,7 @@ Trình liên kết sẽ báo lỗi vì không tìm thấy định nghĩa của `
 
 Cách khắc phục: Kiểm tra xem tất cả các hàm được khai báo đã có định nghĩa tương ứng chưa.
 
-## 5. Lỗi Truy Cập Bộ Nhớ (Memory Access Errors) 💾❌📛
+# 5. Lỗi Truy Cập Bộ Nhớ (Memory Access Errors) 💾❌📛
 
 Lỗi truy cập bộ nhớ xảy ra khi truy cập vùng nhớ không hợp lệ.
 
@@ -116,7 +116,7 @@ Lỗi trên xảy ra do truy cập phần tử ngoài phạm vi của mảng.
 
 Cách khắc phục: Luôn kiểm tra giới hạn của mảng và con trỏ trước khi sử dụng.
 
-## 6. Lỗi Ngoại Lệ (Exception Errors) 🚨📌⚡
+# 6. Lỗi Ngoại Lệ (Exception Errors) 🚨📌⚡
 
 Mặc dù C không hỗ trợ xử lý ngoại lệ như C++, lập trình viên có thể kiểm tra lỗi bằng `errno`.
 
@@ -138,7 +138,7 @@ int main() {
 
 Cách khắc phục: Kiểm tra kết quả của các hàm có thể gặp lỗi.
 
-## 7. Lỗi Số Học (Arithmetic Errors) ➗🧮🛑
+# 7. Lỗi Số Học (Arithmetic Errors) ➗🧮🛑
 
 Lỗi số học bao gồm chia cho 0 và tràn số (overflow).
 
@@ -159,7 +159,7 @@ Cách khắc phục: Kiểm tra phạm vi giá trị trước khi thực hiện 
 
 Việc hiểu rõ và xử lý tốt các lỗi này giúp lập trình viên nâng cao chất lượng mã nguồn, đảm bảo chương trình chạy ổn định và hiệu quả. 🚀✅🎯
 
-## Bảng Tổng Hợp Các Lỗi Thường Gặp Trong C 📋
+# Bảng Tổng Hợp Các Lỗi Thường Gặp Trong C 📋
 
 | Loại Lỗi            | Thời Điểm Phát Hiện | Dấu Hiệu                       | Ví Dụ Điển Hình              | Mã Lỗi (nếu có)         | Cách Khắc Phục                                       |
 | ------------------- | ------------------- | ------------------------------ | ---------------------------- | ----------------------- | ---------------------------------------------------- |

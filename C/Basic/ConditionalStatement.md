@@ -1,8 +1,8 @@
 # Cấu trúc rẽ nhánh (if-else)
 
-Cấu trúc `if-else` cho phép lập trình viên quyết định khối lệnh nào được thi hành dựa vào điều kiện logic.  
+Cấu trúc `if-else` cho phép lập trình viên quyết định khối lệnh nào được thi hành dựa vào điều kiện logic.
 
-## Cú pháp căn bản
+# Cú pháp căn bản
 
 ```c
 if (điều_kiện) {
@@ -12,7 +12,7 @@ if (điều_kiện) {
 }
 ```
 
-## Lồng nhiều điều kiện
+# Lồng nhiều điều kiện
 
 ```c
 if (điều_kiện_1) {
@@ -24,7 +24,7 @@ if (điều_kiện_1) {
 }
 ```
 
-## Toán tử điều kiện trong C
+# Toán tử điều kiện trong C
 
 C hỗ trợ các toán tử điều kiện logic thông dụng:
 
@@ -35,7 +35,7 @@ C hỗ trợ các toán tử điều kiện logic thông dụng:
 - Bằng: `a == b`
 - Khác: `a != b`
 
-## Ví dụ minh họa
+# Ví dụ minh họa
 
 ```c
 #include <stdio.h>
@@ -53,18 +53,20 @@ int main() {
 }
 ```
 
-## Toán tử ba ngôi (Ternary Operator)
+# Toán tử ba ngôi (Ternary Operator)
 
 Toán tử ba ngôi là cách viết rút gọn của câu lệnh `if-else`. Nó được gọi là toán tử ba ngôi vì có ba thành phần.
 
-### Cú pháp
+## Cú pháp
+
 ```c
 biến = (điều_kiện) ? giá_trị_đúng : giá_trị_sai;
 ```
 
-### Ví dụ minh họa
+## Ví dụ minh họa
 
 Thay vì viết:
+
 ```c
 int time = 20;
 if (time < 18) {
@@ -75,12 +77,14 @@ if (time < 18) {
 ```
 
 Bạn có thể viết gọn lại thành:
+
 ```c
 int time = 20;
 (time < 18) ? printf("Chào ban ngày.") : printf("Chào buổi tối.");
 ```
 
 Một ví dụ khác về gán giá trị:
+
 ```c
 int a = 10, b = 20;
 int max = (a > b) ? a : b;  // max sẽ bằng 20
@@ -90,9 +94,9 @@ int max = (a > b) ? a : b;  // max sẽ bằng 20
 
 > **Mẹo**: Luôn kiểm tra tính chính xác của điều kiện trước khi viết khối lệnh, tránh lồng ghép `if-else` phức tạp gây khó đọc.
 
-## Thủ thuật tối ưu câu lệnh điều kiện
+# Thủ thuật tối ưu câu lệnh điều kiện
 
-### 1. Trả về trực tiếp điều kiện
+## 1. Trả về trực tiếp điều kiện
 
 Thay vì viết if-else để trả về giá trị boolean, hãy trả về điều kiện trực tiếp.
 
@@ -108,7 +112,7 @@ if (x > 0) {
 return x > 0;
 ```
 
-### 2. Gán giá trị mặc định
+## 2. Gán giá trị mặc định
 
 Gán giá trị mặc định trước, chỉ thay đổi khi điều kiện thỏa mãn.
 
@@ -128,7 +132,7 @@ if (connection) {
 }
 ```
 
-### 3. Sử dụng switch thay cho nhiều if-else (bạn sẽ được học ở phía dưới)
+## 3. Sử dụng switch thay cho nhiều if-else (bạn sẽ được học ở phía dưới)
 
 Khi có nhiều điều kiện, switch có thể giúp code rõ ràng hơn:
 
@@ -145,7 +149,7 @@ switch (grade) {
 }
 ```
 
-### 4. Tránh so sánh không cần thiết
+## 4. Tránh so sánh không cần thiết
 
 ```c
 // Không cần thiết
@@ -155,7 +159,7 @@ if (isValid == 1)
 if (isValid)
 ```
 
-### 5. Sử dụng toán tử ba ngôi (ternary operator)
+## 5. Sử dụng toán tử ba ngôi (ternary operator)
 
 ```c
 // Thay vì
@@ -170,11 +174,11 @@ if (a > b) {
 int max = (a > b) ? a : b;
 ```
 
-### 6. Sử dụng tư duy ngược trong `if-else`
+## 6. Sử dụng tư duy ngược trong `if-else`
 
-Một cách tiếp cận hiệu quả là **tư duy ngược (reverse thinking)** hay **guard clause**. Thay vì lồng nhiều `if-else`, bạn kiểm tra các điều kiện không hợp lệ trước và trả về sớm. Điều này giúp mã nguồn rõ ràng, dễ bảo trì hơn.  
+Một cách tiếp cận hiệu quả là **tư duy ngược (reverse thinking)** hay **guard clause**. Thay vì lồng nhiều `if-else`, bạn kiểm tra các điều kiện không hợp lệ trước và trả về sớm. Điều này giúp mã nguồn rõ ràng, dễ bảo trì hơn.
 
-**Ví dụ:**  
+**Ví dụ:**
 
 ```c
 
@@ -266,6 +270,7 @@ int main() {
 Trong ví dụ này, biến `day` có giá trị là 4. Khi được truyền vào cấu trúc `switch`, chương trình sẽ so sánh với từng nhãn `case` và tìm thấy sự trùng khớp ở `case 4`, do đó in ra "Thursday".
 
 **Lưu ý:**
+
 - Biểu thức trong câu lệnh `switch` phải trả về một giá trị nguyên hoặc một giá trị có thể chuyển đổi sang kiểu nguyên.
 - Các nhãn `case` phải là các hằng số hoặc biểu thức hằng số.
 - Sử dụng `break` để ngăn chặn việc "rơi qua" các `case` khác ngoài ý muốn.
@@ -273,19 +278,19 @@ Trong ví dụ này, biến `day` có giá trị là 4. Khi được truyền v�
 
 Việc sử dụng cấu trúc `switch` giúp mã nguồn trở nên rõ ràng và dễ bảo trì hơn khi cần kiểm tra nhiều giá trị của cùng một biểu thức.
 
-## Chi tiết hơn về câu lệnh `switch`
+# Chi tiết hơn về câu lệnh `switch`
 
-### Phạm vi của `case`
+## Phạm vi của `case`
 
 Các nhãn `case` phải là duy nhất trong một câu lệnh `switch`. Tuy nhiên, bạn có thể lồng các câu lệnh `switch` bên trong nhau, và các nhãn `case` trong các câu lệnh `switch` lồng nhau có thể trùng nhau.
 
-### Kiểu dữ liệu được hỗ trợ
+## Kiểu dữ liệu được hỗ trợ
 
-Trong C, biểu thức trong câu lệnh `switch` phải có kiểu số nguyên (ví dụ: `int`, `char`, `short`, `long`) hoặc kiểu liệt kê (`enum`).  `float` và `double` không được phép.
+Trong C, biểu thức trong câu lệnh `switch` phải có kiểu số nguyên (ví dụ: `int`, `char`, `short`, `long`) hoặc kiểu liệt kê (`enum`). `float` và `double` không được phép.
 
-### Sự "rơi qua" (Fall-through)
+## Sự "rơi qua" (Fall-through)
 
-Như đã đề cập, nếu bạn bỏ qua `break` ở cuối một `case`, việc thực thi sẽ "rơi qua" `case` tiếp theo.  Đôi khi, đây là điều bạn muốn, nhưng thường là một lỗi.
+Như đã đề cập, nếu bạn bỏ qua `break` ở cuối một `case`, việc thực thi sẽ "rơi qua" `case` tiếp theo. Đôi khi, đây là điều bạn muốn, nhưng thường là một lỗi.
 
 Ví dụ về "rơi qua" có chủ ý:
 
@@ -325,11 +330,11 @@ int main() {
 
 Trong ví dụ này, các tháng có cùng số ngày được nhóm lại với nhau để tránh lặp lại code.
 
-### `default` không phải lúc nào cũng là cuối cùng
+## `default` không phải lúc nào cũng là cuối cùng
 
 Mặc dù thông thường `default` được đặt ở cuối câu lệnh `switch`, nhưng nó có thể xuất hiện ở bất kỳ đâu. Tuy nhiên, nếu `default` không phải là `case` cuối cùng, bạn cần đảm bảo có một câu lệnh `break` để tránh "rơi qua" vào các `case` khác.
 
-### Sử dụng `enum` với `switch`
+## Sử dụng `enum` với `switch`
 
 Sử dụng kiểu `enum` với `switch` có thể làm cho code của bạn dễ đọc và bảo trì hơn:
 
@@ -361,7 +366,7 @@ int main() {
 }
 ```
 
-## Các lỗi thường gặp và cách tránh
+# Các lỗi thường gặp và cách tránh
 
 1.  **Quên `break`:** Đây là lỗi phổ biến nhất khi sử dụng `switch`. Luôn kiểm tra kỹ xem bạn đã thêm `break` vào cuối mỗi `case` (trừ khi bạn có ý định "rơi qua").
 
@@ -369,15 +374,15 @@ int main() {
 
 3.  **Không có `default`:** Mặc dù không bắt buộc, việc thiếu `default` có thể khiến chương trình của bạn không xử lý được các giá trị không mong muốn. Hãy luôn cân nhắc việc thêm một `default` để xử lý các trường hợp ngoại lệ.
 
-4.  **Nhầm lẫn giữa `=` và `==` trong `case`:**  Các nhãn `case` sử dụng hằng số, không phải biểu thức điều kiện. Bạn không thể sử dụng `case x == 5:` mà phải sử dụng `case 5:`.
+4.  **Nhầm lẫn giữa `=` và `==` trong `case`:** Các nhãn `case` sử dụng hằng số, không phải biểu thức điều kiện. Bạn không thể sử dụng `case x == 5:` mà phải sử dụng `case 5:`.
 
-## Khi nào nên sử dụng `switch`?
+# Khi nào nên sử dụng `switch`?
 
-*   Khi bạn có một biến hoặc biểu thức mà bạn muốn so sánh với một số lượng lớn các giá trị hằng.
-*   Khi bạn muốn code của mình dễ đọc và bảo trì hơn so với việc sử dụng một loạt các câu lệnh `if...else if`.
-*   Khi hiệu suất là một yếu tố quan trọng (trong một số trường hợp, `switch` có thể nhanh hơn so với `if...else if`).
+- Khi bạn có một biến hoặc biểu thức mà bạn muốn so sánh với một số lượng lớn các giá trị hằng.
+- Khi bạn muốn code của mình dễ đọc và bảo trì hơn so với việc sử dụng một loạt các câu lệnh `if...else if`.
+- Khi hiệu suất là một yếu tố quan trọng (trong một số trường hợp, `switch` có thể nhanh hơn so với `if...else if`).
 
-## Kết luận
+# Kết luận
 
 Câu lệnh `switch` là một công cụ mạnh mẽ trong C để kiểm soát luồng chương trình dựa trên giá trị của một biểu thức. Bằng cách hiểu rõ cú pháp, cách hoạt động và các lỗi thường gặp, bạn có thể sử dụng `switch` một cách hiệu quả để viết code rõ ràng, dễ bảo trì và hiệu quả.
 

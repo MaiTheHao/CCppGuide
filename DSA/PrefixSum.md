@@ -1,4 +1,4 @@
-## VẤN ĐỀ
+# VẤN ĐỀ
 
 Bạn đã từng giải bài toán tính tổng đoạn con của một dãy số nguyên chưa?
 
@@ -6,14 +6,14 @@ Bạn đã từng giải bài toán tính tổng đoạn con của một dãy s�
 
 Vấn đề là làm thế nào để giải quyết bài toán này một cách hiệu quả nhất với **1 tỷ truy vấn (query)**?
 
-## CÁCH TIẾP CẬN CƠ BẢN
+# CÁCH TIẾP CẬN CƠ BẢN
 
-### Sử dụng vòng lặp để duyệt qua từng phần tử của mảng và cộng dồn lại cho từng truy vấn:
+## Sử dụng vòng lặp để duyệt qua từng phần tử của mảng và cộng dồn lại cho từng truy vấn:
 
 1. Duyệt bắt đầu từ vị trí đầu tiên.
 2. Kết thúc ở vị trí cần tính tổng.
 3. Cộng dồn các giá trị của các phần tử lại với nhau.
-> 💡 Đây là cách tiếp cận cơ bản và dễ hiểu nhất
+   > 💡 Đây là cách tiếp cận cơ bản và dễ hiểu nhất
 
 ```c
 #include <stdio.h>
@@ -49,17 +49,18 @@ int main() {
     return 0;
 }
 ```
+
 - **Ưu điểm:** _Dễ hiểu, dễ cài đặt._
 - **Nhược điểm:**
-    - _Độ phức tạp O(n) trong việc tính tổng đoạn con._
-    - _Nếu đề bài yêu cầu 1 tỷ truy vấn (query) thì cách tiếp cận này không hiệu quả._
+  - _Độ phức tạp O(n) trong việc tính tổng đoạn con._
+  - _Nếu đề bài yêu cầu 1 tỷ truy vấn (query) thì cách tiếp cận này không hiệu quả._
 
-### Nếu dùng cách trên để giải quyết 1 tỷ truy vấn thì, máy tính cần xử lí:
+## Nếu dùng cách trên để giải quyết 1 tỷ truy vấn thì, máy tính cần xử lí:
 
--   Với kích thước mảng ban đầu (5) =>**10^9 \* 5 = 5 tỷ phép toán ~ 25s**
--   Nếu tăng kích thước mảng lên 10^6 => __10^9 \* 10^6 = 10^15 phép toán ~ 5*10^6s__.
+- Với kích thước mảng ban đầu (5) =>**10^9 \* 5 = 5 tỷ phép toán ~ 25s**
+- Nếu tăng kích thước mảng lên 10^6 => **10^9 \* 10^6 = 10^15 phép toán ~ 5\*10^6s**.
 
-## VẬY LÀM THẾ NÀO ĐỂ GIẢI QUYẾT VẤN ĐỀ QUÁ THỜI GIAN VỚI 1 TỶ QUERY?
+# VẬY LÀM THẾ NÀO ĐỂ GIẢI QUYẾT VẤN ĐỀ QUÁ THỜI GIAN VỚI 1 TỶ QUERY?
 
 Để giải quyết vấn đề này, chúng ta cần sử dụng một kỹ thuật tối ưu hóa gọi là **Prefix Sum**.
 
@@ -75,7 +76,7 @@ Trong nội dung này, chúng ta chỉ giới thiệu và hướng dẫn về **
 
 Bắt đầu với **Prefix Sum 1D** sẽ giúp bạn nắm vững khái niệm cơ bản trước khi tiến tới các kỹ thuật phức tạp hơn.
 
-## ĐỊNH NGHĨA
+# ĐỊNH NGHĨA
 
 Giả sử bạn có một mảng số nguyên:
 
@@ -91,19 +92,19 @@ P[i] = a₀ + a₁ + ... + aᵢ, với i = 0, 1, 2, ..., n-1
 
 Điều này có nghĩa là mỗi phần tử **P[i]** trong **mảng cộng dồn** là tổng của tất cả các phần tử từ **a₀** đến **aᵢ** trong mảng A.
 
-## CÁCH THIẾT LẬP MẢNG CỘNG DỒN
+# CÁCH THIẾT LẬP MẢNG CỘNG DỒN
 
 Một cách đơn giản để tính mảng cộng dồn là:
 
 1. Khởi tạo: `P[0] = A[0]`
 2. Với mỗi `i` từ 1 đến n-1, thực hiện:
-    ```
-    P[i] = P[i-1] + A[i]
-    ```
+   ```
+   P[i] = P[i-1] + A[i]
+   ```
 
 Thời gian thực hiện thuật toán này là O(n).
 
-## VÍ DỤ
+# VÍ DỤ
 
 Giả sử mảng ban đầu là:
 
@@ -128,11 +129,11 @@ Vậy mảng prefix là:
 
 ```
 P = [1, 3, 6, 10, 15]
-``` 
+```
 
-## ỨNG DỤNG
+# ỨNG DỤNG
 
-### Truy vấn tổng đoạn con mảng  
+## Truy vấn tổng đoạn con mảng
 
 Sau khi có mảng cộng dồn, tổng của đoạn từ `i` đến `j` có thể được tính bằng công thức:
 
@@ -143,16 +144,18 @@ sum(i, j) = P[j], với i = 0
 
 > Chúng ta sẽ sử dụng hai mảng `A` và `P` đã đề cập ở trên.
 
-Ví dụ:  
+Ví dụ:
 
-#### Tính tổng đoạn con từ vị trí `1` đến `3`  
+## Tính tổng đoạn con từ vị trí `1` đến `3`
+
 (Tức là từ phần tử thứ `2` đến phần tử thứ `4` trong mảng `A`)
 
 ```plaintext
 sum(1, 3) = P[3] - P[1 - 1] = 10 - 1 = 9
 ```
 
-#### Tính tổng đoạn con từ vị trí `0` đến `4`  
+## Tính tổng đoạn con từ vị trí `0` đến `4`
+
 (Tức là từ phần tử đầu tiên đến phần tử cuối cùng trong mảng `A`)
 
 ```plaintext
@@ -160,7 +163,8 @@ sum(0, 4) = P[4] = 15 - 0 = 15
 ```
 
 # GIẢI QUYẾT VẤN ĐỀ BAN ĐẦU VÀ 1 TỶ TRUY VẤN
-## Áp dụng kiến thức mới biết về prefix sum vào bài toán ban đầu:
+
+# Áp dụng kiến thức mới biết về prefix sum vào bài toán ban đầu:
 
 ```c
 #include <stdio.h>
@@ -183,7 +187,7 @@ int main(){
     printf("\n");
 
     // Khi tìm từ phần tử đầu tiên tới i, ta chỉ cần lấy P[i], vì P[i] chính là tổng của các phần tử từ 0 đến i
-    // Khi tìm từ phần tử i đến j, ta cần lấy P[j] - P[i]                           
+    // Khi tìm từ phần tử i đến j, ta cần lấy P[j] - P[i]
     printf("Sum from 0 to 1: %d\n", P[1]);  // 10
     printf("Sum from 0 to 3: %d\n", P[3]);  // 40
     printf("Sum from 0 to 4: %d\n", P[4]);  // 70
@@ -196,19 +200,22 @@ int main(){
     return 0;
 }
 ```
-## Độ phức tạp:
+
+# Độ phức tạp:
+
 - Tiền xử lý mảng cộng dồn: O(n) (duyệt qua mảng một lần để tính tổng tích lũy).
 - Mỗi truy vấn tính tổng đoạn con: O(1) (chỉ cần một phép trừ trên mảng cộng dồn).
 - Ba lần truy vấn tổng đoạn con: O(1) (vì vẫn chỉ thực hiện ba phép trừ đơn giản).
 - Tổng độ phức tạp: O(n) (tiền xử lý) + O(1) (mỗi truy vấn) → O(n) + O(q) ~ O(n + q) (với q là số truy vấn).
 
-| Kích thước mảng (n) | Số truy vấn (q) | Tổng số phép toán ước tính | Thời gian ước tính |
-|---------------------|-----------------|-----------------------------|---------------------|
-| n bất kỳ            | q truy vấn      | O(n + q)                    | ~ O(n + q) / 2 * 10^8 |
-| n = 5               | 10^9 truy vấn    | 5 + 10^9 = 1 tỷ lẻ 5 phép toán  | 5s |
-| n = 10^6             | 10^9 truy vấn    | 10^6 + 10^9 = 1 tỷ 1 triệu phép toán  | 5.005s |
+| Kích thước mảng (n) | Số truy vấn (q) | Tổng số phép toán ước tính           | Thời gian ước tính     |
+| ------------------- | --------------- | ------------------------------------ | ---------------------- |
+| n bất kỳ            | q truy vấn      | O(n + q)                             | ~ O(n + q) / 2 \* 10^8 |
+| n = 5               | 10^9 truy vấn   | 5 + 10^9 = 1 tỷ lẻ 5 phép toán       | 5s                     |
+| n = 10^6            | 10^9 truy vấn   | 10^6 + 10^9 = 1 tỷ 1 triệu phép toán | 5.005s                 |
 
 💡 Nhận xét:
+
 - Ưu điểm: Phương pháp này rất hiệu quả khi có nhiều truy vấn vì mỗi truy vấn chỉ mất O(1) thời gian.
 - Nhược điểm: Khi n và q đều rất lớn, có thể cần tối ưu hơn bằng các cấu trúc như Sparse Table (cho truy vấn min/max) hoặc Fenwick Tree / Segment Tree (cho cập nhật động).
 
@@ -219,5 +226,6 @@ Như vậy, chúng ta đã tìm hiểu về **Prefix Sum** và cách áp dụng 
 Hy vọng rằng bài viết này sẽ giúp bạn hiểu rõ hơn về **Prefix Sum** và cách sử dụng nó trong thực tế.
 
 # LIÊN KẾT
+
 [Tìm hiểu chi tiết hơn về Prefix Sum](https://usaco.guide/silver/prefix-sums)
 [Tìm hiểu về Prefix Sum 2D và hơn nữa](https://usaco.guide/silver/more-prefix-sums)
